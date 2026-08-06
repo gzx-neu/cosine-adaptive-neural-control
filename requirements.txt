@@ -1,0 +1,8 @@
+numpy==2.2.4
+scipy==1.15.2
+pandas==2.3.2
+matplotlib==3.10.1
+casadi==3.7.2
+# Install the CUDA 12.6 build when reproducing the archived VDP/CSTR device protocol.
+torch==2.6.0
+

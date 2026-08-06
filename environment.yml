@@ -1,0 +1,16 @@
+name: ca-kkt
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12.9
+  - numpy=2.2.4
+  - scipy=1.15.2
+  - pandas=2.3.2
+  - matplotlib=3.10.1
+  - casadi=3.7.2
+  - pytorch=2.6.0
+  - pytorch-cuda=12.6
+  - pip
+

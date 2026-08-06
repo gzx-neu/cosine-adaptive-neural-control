@@ -1,0 +1,788 @@
+{
+  "formal_protocol": true,
+  "protocol": "30 frozen seeds, four methods, matched 400 points, discrete-only 31-candidate cached HDS",
+  "seeds": [
+    20260771,
+    20260772,
+    20260773,
+    20260774,
+    20260775,
+    20260776,
+    20260777,
+    20260778,
+    20260779,
+    20260780,
+    20260781,
+    20260782,
+    20260783,
+    20260784,
+    20260785,
+    20260786,
+    20260787,
+    20260788,
+    20260789,
+    20260790,
+    20260791,
+    20260792,
+    20260793,
+    20260794,
+    20260795,
+    20260796,
+    20260797,
+    20260798,
+    20260799,
+    20260800
+  ],
+  "grid_size": 31,
+  "bisection": false,
+  "acceptance_threshold": -1e-06,
+  "segment_cache_reused": true,
+  "final_reaudit_performed": false,
+  "benchmarks": {
+    "vdp": {
+      "supervised": {
+        "hds_gap_percent": {
+          "mean": 0.3958764464522452,
+          "sample_sd": 0.05447871270607476,
+          "median": 0.39035955050981996,
+          "min": 0.2912927720548319,
+          "max": 0.5383426888203069
+        },
+        "nominal_gap_percent": {
+          "mean": 0.014848292829898498,
+          "sample_sd": 0.007840251710699278,
+          "median": 0.014443355196638058,
+          "min": -0.0018326143704047865,
+          "max": 0.03392833312525915
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 55.25,
+          "sample_sd": 5.28579749634942,
+          "median": 55.125,
+          "min": 45.5,
+          "max": 67.5
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 0.55725,
+          "sample_sd": 0.053668643320490865,
+          "median": 0.55625,
+          "min": 0.455,
+          "max": 0.6775
+        },
+        "mean_hds_ms": {
+          "mean": 6.739876541665278,
+          "sample_sd": 0.15197468143233792,
+          "median": 6.6984868749818816,
+          "min": 6.475173749981877,
+          "max": 7.082494750020487
+        },
+        "mean_total_ms": {
+          "mean": 6.744239391665208,
+          "sample_sd": 0.15235887830101516,
+          "median": 6.701573124983042,
+          "min": 6.477723249981866,
+          "max": 7.087493750018439
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.2150578068692575e-06
+      },
+      "unprocessed": {
+        "hds_gap_percent": {
+          "mean": 0.17167115402507813,
+          "sample_sd": 0.023098064466531516,
+          "median": 0.16572395634539627,
+          "min": 0.13398840885889268,
+          "max": 0.23196231485713975
+        },
+        "nominal_gap_percent": {
+          "mean": 0.14740755669181835,
+          "sample_sd": 0.018736891408414155,
+          "median": 0.13997181879399712,
+          "min": 0.126288945020206,
+          "max": 0.19251015491221846
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 8.791666666666666,
+          "sample_sd": 2.965377318939052,
+          "median": 8.5,
+          "min": 2.75,
+          "max": 14.499999999999998
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 0.08850000000000001,
+          "sample_sd": 0.030004310035220857,
+          "median": 0.085,
+          "min": 0.0275,
+          "max": 0.145
+        },
+        "mean_hds_ms": {
+          "mean": 6.092275299993314,
+          "sample_sd": 0.12086833447775246,
+          "median": 6.111836124966885,
+          "min": 5.788543999997273,
+          "max": 6.389857999984088
+        },
+        "mean_total_ms": {
+          "mean": 6.09675024165972,
+          "sample_sd": 0.12109085795153111,
+          "median": 6.11657737496671,
+          "min": 5.791520249999849,
+          "max": 6.392520499985039
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.6268915123407446e-06
+      },
+      "linear_cosine": {
+        "hds_gap_percent": {
+          "mean": 0.16568189689021476,
+          "sample_sd": 0.02153939963229615,
+          "median": 0.1614667831436728,
+          "min": 0.13124325224066302,
+          "max": 0.2257536327206843
+        },
+        "nominal_gap_percent": {
+          "mean": 0.12979423875934062,
+          "sample_sd": 0.016681732283318214,
+          "median": 0.1289330907808719,
+          "min": 0.09592409841526259,
+          "max": 0.1712801809417786
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 11.1,
+          "sample_sd": 5.01532135319982,
+          "median": 9.625,
+          "min": 3.0,
+          "max": 23.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 0.11191666666666668,
+          "sample_sd": 0.05098040247763457,
+          "median": 0.0975,
+          "min": 0.03,
+          "max": 0.2325
+        },
+        "mean_hds_ms": {
+          "mean": 6.205745416676716,
+          "sample_sd": 0.18255996538594405,
+          "median": 6.211313750047793,
+          "min": 5.842882749952878,
+          "max": 6.654205500062744
+        },
+        "mean_total_ms": {
+          "mean": 6.209194925009949,
+          "sample_sd": 0.18260714237219008,
+          "median": 6.213922500046465,
+          "min": 5.845526249954673,
+          "max": 6.657560750063567
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -2.383177752474097e-06
+      },
+      "standard_pcgrad": {
+        "hds_gap_percent": {
+          "mean": 0.17739832415980425,
+          "sample_sd": 0.03584899761712315,
+          "median": 0.17192283259306507,
+          "min": 0.12548065828887617,
+          "max": 0.246519040553432
+        },
+        "nominal_gap_percent": {
+          "mean": 0.10112748670369777,
+          "sample_sd": 0.022498851459955612,
+          "median": 0.10420022842192267,
+          "min": 0.05912990508737974,
+          "max": 0.13403114698970475
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 18.0,
+          "sample_sd": 9.318132120060143,
+          "median": 17.75,
+          "min": 5.5,
+          "max": 42.75
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 0.18141666666666664,
+          "sample_sd": 0.0941813257840257,
+          "median": 0.17875000000000002,
+          "min": 0.055,
+          "max": 0.4325
+        },
+        "mean_hds_ms": {
+          "mean": 6.403867116654358,
+          "sample_sd": 0.1593331837108726,
+          "median": 6.365831124987835,
+          "min": 6.085767750009836,
+          "max": 6.844764499978737
+        },
+        "mean_total_ms": {
+          "mean": 6.40774827498808,
+          "sample_sd": 0.1600837545334385,
+          "median": 6.3700093750208,
+          "min": 6.0884882500113235,
+          "max": 6.851977999976953
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.0574606011948262e-06
+      }
+    },
+    "penicillin": {
+      "supervised": {
+        "hds_gap_percent": {
+          "mean": 0.61748432050797,
+          "sample_sd": 0.09810087592879332,
+          "median": 0.6140359756646816,
+          "min": 0.37611716906081044,
+          "max": 0.8908409046388612
+        },
+        "nominal_gap_percent": {
+          "mean": 0.013289550292376502,
+          "sample_sd": 0.002480941692777292,
+          "median": 0.013132010560380901,
+          "min": 0.009246533241296814,
+          "max": 0.01779883052988812
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 99.2,
+          "sample_sd": 1.3364905149501525,
+          "median": 99.75,
+          "min": 94.75,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 3.2051666666666665,
+          "sample_sd": 0.15500268814873286,
+          "median": 3.2199999999999998,
+          "min": 2.9325,
+          "max": 3.6025
+        },
+        "mean_hds_ms": {
+          "mean": 69.0240252499957,
+          "sample_sd": 2.133311829139005,
+          "median": 69.47904949999611,
+          "min": 63.78703450001012,
+          "max": 73.0200325000078
+        },
+        "mean_total_ms": {
+          "mean": 69.0264910749958,
+          "sample_sd": 2.133618554936703,
+          "median": 69.4812094999952,
+          "min": 63.7907897500145,
+          "max": 73.02407150000816
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.1128083188260973e-06
+      },
+      "unprocessed": {
+        "hds_gap_percent": {
+          "mean": 0.3312723081851262,
+          "sample_sd": 0.07356360787098828,
+          "median": 0.3294818945678347,
+          "min": 0.19806588605828873,
+          "max": 0.511787820947677
+        },
+        "nominal_gap_percent": {
+          "mean": 0.1639040548370109,
+          "sample_sd": 0.05013824223164398,
+          "median": 0.14110036645050733,
+          "min": 0.09060301641939364,
+          "max": 0.28327194377345466
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 92.65833333333333,
+          "sample_sd": 6.873701549275014,
+          "median": 94.0,
+          "min": 78.0,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 1.773,
+          "sample_sd": 0.29451406499988864,
+          "median": 1.7774999999999999,
+          "min": 1.1625,
+          "max": 2.2875
+        },
+        "mean_hds_ms": {
+          "mean": 60.88279716666208,
+          "sample_sd": 1.6341511059514826,
+          "median": 61.037329250013954,
+          "min": 57.570792000024085,
+          "max": 64.50101849995008
+        },
+        "mean_total_ms": {
+          "mean": 60.885373808329405,
+          "sample_sd": 1.6341725314754332,
+          "median": 61.03993550001405,
+          "min": 57.57250450002177,
+          "max": 64.50319999995372
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.4072971583622973e-06
+      },
+      "linear_cosine": {
+        "hds_gap_percent": {
+          "mean": 0.31744551418373274,
+          "sample_sd": 0.05276874055864915,
+          "median": 0.3164347310274954,
+          "min": 0.21374596697112822,
+          "max": 0.42491665603033946
+        },
+        "nominal_gap_percent": {
+          "mean": 0.12016460360265815,
+          "sample_sd": 0.024139401592264575,
+          "median": 0.1133284297852261,
+          "min": 0.08585739480358334,
+          "max": 0.17951130253354866
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 92.16666666666667,
+          "sample_sd": 4.848272592010146,
+          "median": 91.625,
+          "min": 84.0,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 1.9628333333333332,
+          "sample_sd": 0.273719379749726,
+          "median": 1.95,
+          "min": 1.3375,
+          "max": 2.61
+        },
+        "mean_hds_ms": {
+          "mean": 60.60288976668259,
+          "sample_sd": 1.8439422239551018,
+          "median": 60.43980037507026,
+          "min": 57.366179250047935,
+          "max": 64.57032625000011
+        },
+        "mean_total_ms": {
+          "mean": 60.60550284168221,
+          "sample_sd": 1.8439880267408277,
+          "median": 60.44160787507053,
+          "min": 57.36806150004668,
+          "max": 64.57398250000097
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.2533662314684335e-06
+      },
+      "standard_pcgrad": {
+        "hds_gap_percent": {
+          "mean": 0.3274936036922316,
+          "sample_sd": 0.060658190962265435,
+          "median": 0.33941784051256985,
+          "min": 0.22425414796097382,
+          "max": 0.44553526357558265
+        },
+        "nominal_gap_percent": {
+          "mean": 0.112445884362901,
+          "sample_sd": 0.012978290892550717,
+          "median": 0.1141791058598324,
+          "min": 0.08780186997029739,
+          "max": 0.13794056826969067
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 91.93333333333334,
+          "sample_sd": 5.833883389501272,
+          "median": 92.375,
+          "min": 79.25,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 1.963666666666667,
+          "sample_sd": 0.32964239593141276,
+          "median": 1.9375,
+          "min": 1.53,
+          "max": 2.695
+        },
+        "mean_hds_ms": {
+          "mean": 60.256980924998665,
+          "sample_sd": 2.2014748429581483,
+          "median": 60.456002624973735,
+          "min": 56.20058074992812,
+          "max": 65.49392399998851
+        },
+        "mean_total_ms": {
+          "mean": 60.25964809166544,
+          "sample_sd": 2.2014303489308937,
+          "median": 60.45984149997368,
+          "min": 56.202640499927824,
+          "max": 65.4958184999896
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.3217453837532922e-06
+      }
+    },
+    "cstr": {
+      "supervised": {
+        "hds_gap_percent": {
+          "mean": 0.24999415770149128,
+          "sample_sd": 0.02430863995828292,
+          "median": 0.2556358011213239,
+          "min": 0.19339114941629873,
+          "max": 0.28917034010407605
+        },
+        "nominal_gap_percent": {
+          "mean": 0.026970028792416275,
+          "sample_sd": 0.021841621556722455,
+          "median": 0.026836981163616463,
+          "min": -0.031640850199090284,
+          "max": 0.07746780861866644
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 97.30833333333334,
+          "sample_sd": 4.859084689834959,
+          "median": 99.5,
+          "min": 81.0,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 11.007666666666667,
+          "sample_sd": 1.0192136787683463,
+          "median": 11.07,
+          "min": 9.2925,
+          "max": 13.9175
+        },
+        "mean_hds_ms": {
+          "mean": 95.7668549083237,
+          "sample_sd": 2.6463658155696366,
+          "median": 95.62062924994962,
+          "min": 91.35683049993077,
+          "max": 102.90842125005383
+        },
+        "mean_total_ms": {
+          "mean": 95.77075232499085,
+          "sample_sd": 2.6463577926777244,
+          "median": 95.62431799995235,
+          "min": 91.3603809999313,
+          "max": 102.91218400005619
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.0007486876406624e-06,
+        "hds_gap_qualified286_percent": {
+          "mean": 0.2235085543505043,
+          "sample_sd": 0.02703818377789874,
+          "median": 0.22783984287506603,
+          "min": 0.1565999711890193,
+          "max": 0.26988932618496525
+        }
+      },
+      "unprocessed": {
+        "hds_gap_percent": {
+          "mean": 0.27384880551893764,
+          "sample_sd": 0.018069305229818464,
+          "median": 0.27674516194784504,
+          "min": 0.23495849398238794,
+          "max": 0.30572323770231685
+        },
+        "nominal_gap_percent": {
+          "mean": 0.01748285665881635,
+          "sample_sd": 0.023918042893145544,
+          "median": 0.01680219381992789,
+          "min": -0.045934805653080446,
+          "max": 0.07468895661795787
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 99.56666666666666,
+          "sample_sd": 1.1023746573000812,
+          "median": 100.0,
+          "min": 95.75,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 13.888583333333333,
+          "sample_sd": 0.9938875004273608,
+          "median": 13.94,
+          "min": 12.2075,
+          "max": 16.9575
+        },
+        "mean_hds_ms": {
+          "mean": 101.24472018332305,
+          "sample_sd": 2.410859776931675,
+          "median": 101.09872749999113,
+          "min": 96.5168282500099,
+          "max": 107.21504475003712
+        },
+        "mean_total_ms": {
+          "mean": 101.24898671665642,
+          "sample_sd": 2.4110036883872574,
+          "median": 101.10293074999163,
+          "min": 96.52047975000642,
+          "max": 107.21858525003881
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.0000934358433966e-06,
+        "hds_gap_qualified286_percent": {
+          "mean": 0.2330838360179949,
+          "sample_sd": 0.021081604182671514,
+          "median": 0.23648693980646068,
+          "min": 0.18515650151845536,
+          "max": 0.2691971438402967
+        }
+      },
+      "linear_cosine": {
+        "hds_gap_percent": {
+          "mean": 0.24418607280269095,
+          "sample_sd": 0.022796649557296416,
+          "median": 0.24886696814990558,
+          "min": 0.19372194731781828,
+          "max": 0.2852403280460941
+        },
+        "nominal_gap_percent": {
+          "mean": 0.02316569914267549,
+          "sample_sd": 0.02251820771304102,
+          "median": 0.021889427868744905,
+          "min": -0.036122309121216924,
+          "max": 0.0760246270861135
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 97.89166666666667,
+          "sample_sd": 4.691648547360941,
+          "median": 100.0,
+          "min": 79.0,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 11.509250000000002,
+          "sample_sd": 1.076251506867462,
+          "median": 11.60625,
+          "min": 9.795,
+          "max": 14.66
+        },
+        "mean_hds_ms": {
+          "mean": 106.5393421583273,
+          "sample_sd": 14.990898690360709,
+          "median": 99.53564212499032,
+          "min": 92.45596024998576,
+          "max": 137.9864829999633
+        },
+        "mean_total_ms": {
+          "mean": 106.54418568332737,
+          "sample_sd": 14.990740186215904,
+          "median": 99.54012187499075,
+          "min": 92.45958874998449,
+          "max": 137.99152424996467
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.0007776392040313e-06,
+        "hds_gap_qualified286_percent": {
+          "mean": 0.2085204724925528,
+          "sample_sd": 0.02602446865464769,
+          "median": 0.21208821086877208,
+          "min": 0.1457780519132869,
+          "max": 0.2511327735288032
+        }
+      },
+      "standard_pcgrad": {
+        "hds_gap_percent": {
+          "mean": 0.2431672735699751,
+          "sample_sd": 0.023199198012409283,
+          "median": 0.24738365090941333,
+          "min": 0.19096233365519366,
+          "max": 0.2851551133134917
+        },
+        "nominal_gap_percent": {
+          "mean": 0.023496861819042987,
+          "sample_sd": 0.022470720179361612,
+          "median": 0.022107267744193783,
+          "min": -0.03552453465767497,
+          "max": 0.07635579480893549
+        },
+        "nominal_violation_rate_percent": {
+          "mean": 97.65,
+          "sample_sd": 4.943473579830558,
+          "median": 100.0,
+          "min": 79.5,
+          "max": 100.0
+        },
+        "post_hds_violation_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "mean_corrected_segments": {
+          "mean": 11.358666666666668,
+          "sample_sd": 1.0841204390826606,
+          "median": 11.432500000000001,
+          "min": 9.5775,
+          "max": 14.495
+        },
+        "mean_hds_ms": {
+          "mean": 106.62781138332275,
+          "sample_sd": 17.35186596482329,
+          "median": 98.00777174998757,
+          "min": 92.63826575001531,
+          "max": 146.76395974998286
+        },
+        "mean_total_ms": {
+          "mean": 106.63198191665667,
+          "sample_sd": 17.351947222744062,
+          "median": 98.01231362498811,
+          "min": 92.64198875001512,
+          "max": 146.76749224998275
+        },
+        "accepted_total": 12000,
+        "fallback_total": 0,
+        "final_max_g": -1.000870747169813e-06,
+        "hds_gap_qualified286_percent": {
+          "mean": 0.20842250792387781,
+          "sample_sd": 0.026335067365127238,
+          "median": 0.21206137551562151,
+          "min": 0.1444844181201995,
+          "max": 0.2513940879221244
+        }
+      }
+    }
+  },
+  "paired": {
+    "vdp": {
+      "linear_cosine_minus_supervised": {
+        "mean_percentage_points": -0.23019454956203042,
+        "left_wins": 30,
+        "right_wins": 0,
+        "ties": 0
+      },
+      "linear_cosine_minus_unprocessed": {
+        "mean_percentage_points": -0.005989257134863333,
+        "left_wins": 27,
+        "right_wins": 3,
+        "ties": 0
+      },
+      "linear_cosine_minus_standard_pcgrad": {
+        "mean_percentage_points": -0.011716427269589444,
+        "left_wins": 16,
+        "right_wins": 14,
+        "ties": 0
+      }
+    },
+    "penicillin": {
+      "linear_cosine_minus_supervised": {
+        "mean_percentage_points": -0.3000388063242373,
+        "left_wins": 29,
+        "right_wins": 1,
+        "ties": 0
+      },
+      "linear_cosine_minus_unprocessed": {
+        "mean_percentage_points": -0.013826794001393425,
+        "left_wins": 19,
+        "right_wins": 11,
+        "ties": 0
+      },
+      "linear_cosine_minus_standard_pcgrad": {
+        "mean_percentage_points": -0.010048089508498921,
+        "left_wins": 18,
+        "right_wins": 12,
+        "ties": 0
+      }
+    },
+    "cstr": {
+      "linear_cosine_minus_supervised": {
+        "mean_percentage_points": -0.005808084898800291,
+        "left_wins": 25,
+        "right_wins": 5,
+        "ties": 0
+      },
+      "linear_cosine_minus_unprocessed": {
+        "mean_percentage_points": -0.029662732716246636,
+        "left_wins": 30,
+        "right_wins": 0,
+        "ties": 0
+      },
+      "linear_cosine_minus_standard_pcgrad": {
+        "mean_percentage_points": 0.0010187992327158845,
+        "left_wins": 2,
+        "right_wins": 28,
+        "ties": 0
+      }
+    }
+  },
+  "timing_note": "Batch timers were collected under concurrent CPU load and are throughput diagnostics, not serial online latency."
+}

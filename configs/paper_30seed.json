@@ -1,0 +1,93 @@
+{
+  "protocol_id": "ca-kkt-30seed-matched400-20260803",
+  "seeds": {
+    "start": 20260771,
+    "stop_inclusive": 20260800,
+    "count": 30
+  },
+  "methods": {
+    "supervised": {
+      "branch": "S-u",
+      "continuation": "matched supervised update"
+    },
+    "unprocessed": {
+      "branch": "S-u+K",
+      "projection": "none"
+    },
+    "linear_cosine": {
+      "branch": "S-u+K",
+      "projection": "eta=max(0,-cos(g_B,g_K))"
+    },
+    "standard_pcgrad": {
+      "branch": "S-u+K",
+      "projection": "full conflicting-component projection"
+    }
+  },
+  "training": {
+    "supervised_epochs": 200,
+    "continuation_epochs": 10,
+    "supervised_learning_rate": 0.001,
+    "continuation_learning_rate": 0.00001,
+    "anchor_weight": 1.0,
+    "augmented_penalty": 10.0,
+    "rollout_consistency_weight": 0.0,
+    "lambda_base_grid_points": 31,
+    "nominal_lambda_audited_separately": true
+  },
+  "benchmarks": {
+    "vdp": {
+      "device": "cuda",
+      "kkt_weight": 0.01,
+      "zoh_segments": 10,
+      "test_points": 400,
+      "reference": "matched Jiang--Fu cold start"
+    },
+    "penicillin": {
+      "device": "cpu",
+      "kkt_weight": 0.01,
+      "zoh_segments": 10,
+      "test_points": 400,
+      "objective_convention": "minimize J=-final_x3",
+      "reference": "matched Jiang--Fu cold start"
+    },
+    "cstr": {
+      "device": "cuda",
+      "kkt_weight": 0.01,
+      "zoh_segments": 100,
+      "transcription_substeps_per_zoh": 10,
+      "test_points": 400,
+      "qualified_reference_points": 286,
+      "acceptance_threshold": -0.000001,
+      "reference": "cold-start reduced-space control-vector NLP"
+    }
+  },
+  "audit": {
+    "solver": "DOP853",
+    "adaptive_steps": true,
+    "peak_location": "segment endpoints plus derivative-zero events",
+    "lambda_base_grid_points": 31,
+    "nominal_lambda_audited_separately": true,
+    "bound_infeasible_lambda_values_discarded": true,
+    "candidate_order": "increasing absolute distance from lambda=1",
+    "early_stop": true,
+    "lambda_bisection": false,
+    "acceptance_threshold": -0.000001,
+    "segment_cache_reused": true,
+    "final_reaudit_performed": false,
+    "claim_boundary": "continuous-time numerical audit evidence under the declared model and numerical settings"
+  },
+  "ood_stress": {
+    "diagnostic_only": true,
+    "layers": {
+      "near": "outside the training box and within the 10% expansion",
+      "far": "outside the 10% expansion and within the 20% expansion"
+    },
+    "network_audit_points_per_layer": 100,
+    "matched_reference_points_per_layer": 50,
+    "selection_seed_base": 20260804,
+    "reference": "fixed cold-start deterministic solution followed by the same HDS audit/correction",
+    "reference_acceptance_threshold": -0.000001,
+    "gap": "100*(J_network_plus_HDS-J_cold_start_plus_HDS)/abs(J_cold_start_plus_HDS)",
+    "default_domain_guard_action": "dispatch every OOD state to the deterministic solver"
+  }
+}

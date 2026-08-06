@@ -1,0 +1,58 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.idea/
+.vscode/
+.DS_Store
+
+# Fresh reruns are intentionally separate from frozen paper artifacts.
+reproduced_results/
+scratch/
+logs/
+paper_assets/generated/
+
+# Generated high-resolution exports can be rebuilt from source.
+*.tiff
+*.tif
+
+# The local assembly source contained its own Git history. Upload the clean
+# copy below; do not create a nested repository entry.
+matlab/jiang_fu/
+
+# MATLAB transient files.
+*.asv
+slprj/
+
+# Compact public release: keep source code and only the frozen inputs needed
+# to rerun training/evaluation. Historical searches, checkpoints, trajectory
+# caches, and manuscript binaries remain local.
+kkt_collocation/results/*
+!kkt_collocation/results/final_multiseed_vdp900_penalty_seed20260751/
+!kkt_collocation/results/final_multiseed_penicillin400_penalty_seed20260761/
+kkt_collocation/results/final_multiseed_vdp900_penalty_seed20260751/*
+!kkt_collocation/results/final_multiseed_vdp900_penalty_seed20260751/validation_states.npy
+!kkt_collocation/results/final_multiseed_vdp900_penalty_seed20260751/test_states.npy
+kkt_collocation/results/final_multiseed_penicillin400_penalty_seed20260761/*
+!kkt_collocation/results/final_multiseed_penicillin400_penalty_seed20260761/validation_x2.npy
+!kkt_collocation/results/final_multiseed_penicillin400_penalty_seed20260761/test_x2.npy
+!kkt_collocation/results/economou_cstr_reduced_kkt_n100_rk10_margin0_ca030_050_t410_420/
+!kkt_collocation/results/jiang_fu_matched400_comparison/
+!kkt_collocation/results/economou_cstr_reduced_kkt_n100_test400_lhs_margin0/
+!kkt_collocation/results/economou_cstr_n100_test400_hds_s200_sk10_fair/
+!kkt_collocation/results/ca_kkt_ood_stress_30seeds_20260803_v1/
+!kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/
+!kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/
+kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/*
+!kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_summary.json
+
+# Paper binaries and local manuscript sources are not needed to run the code.
+paper_assets/**/*.pdf
+paper_assets/**/*.png
+paper_assets/**/*.svg
+paper_assets/**/*.eps
+论文写作/
+MANIFEST.sha256
+*.log
+*.err
+matlab/**/*.pdf
+matlab/**/*.mat

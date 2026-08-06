@@ -1,0 +1,28 @@
+{
+  "release_scope": "minimal staged reproduction of formal 30-seed headline results",
+  "required_stages": [
+    "environment_check",
+    "benchmark_training",
+    "aggregation",
+    "cached_hds_reevaluation",
+    "frozen_verification"
+  ],
+  "optional_stages": ["figures", "ood_diagnostic", "label_or_reference_regeneration"],
+  "frozen_protocol": {
+    "seeds": "20260771-20260800",
+    "test_points_per_seed": 400,
+    "methods": ["supervised", "unprocessed", "linear_cosine", "standard_pcgrad"],
+    "supervised_epochs": 210,
+    "two_stage_epochs": "200+10",
+    "lambda_candidates": 31,
+    "hds": "adaptive DOP853 with event-located extrema and cached segment propagation",
+    "formal_threshold": -1e-6
+  },
+  "entry_points": {
+    "environment_check": ["scripts/reproduce.py", "scripts/verify_bundle.py"],
+    "training_and_aggregation": ["scripts/reproduce.py"],
+    "cached_hds": ["kkt_collocation/reevaluate_multiseed30_discrete31_cached.py", "kkt_collocation/benchmark_hds_segment_cache_grid31_small.py"],
+    "core_hds": ["offline_safe_control/adaptive_event_hds.py", "kkt_collocation/economou_cstr_hds_fast.py"],
+    "figures": ["scripts/reproduce.py"]
+  }
+}
