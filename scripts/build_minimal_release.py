@@ -34,12 +34,14 @@ INPUT_FILES = (
     "kkt_collocation/results/economou_cstr_reduced_kkt_n100_test400_lhs_margin0/records.jsonl",
     "kkt_collocation/results/economou_cstr_reduced_kkt_n100_test400_lhs_margin0/summary.json",
     "kkt_collocation/results/economou_cstr_n100_test400_hds_s200_sk10_fair/cold_reference_high_fidelity.csv",
-    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_summary.json",
-    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_table.md",
-    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/per_seed_summary.csv",
-    "kkt_collocation/results/ca_kkt_ood_stress_30seeds_20260803_v1/aggregate_summary.json",
-    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/aggregate_summary.json",
-    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/cohorts/selected_50x2_points.csv",
+    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1/aggregate_summary.json",
+    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1/aggregate_table.md",
+    "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1/per_seed_summary.csv",
+    "kkt_collocation/results/ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1/aggregate_summary.json",
+    "kkt_collocation/results/ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1/protocol.json",
+    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1/aggregate_summary.json",
+    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1/cohorts/selected_50x2_points.csv",
+    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1/per_seed_matched_gap.csv",
 )
 
 

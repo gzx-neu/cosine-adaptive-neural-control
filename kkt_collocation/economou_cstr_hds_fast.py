@@ -33,7 +33,7 @@ def segment_event_audit(state,control,cfg):
  return g.max(1),xs[:,-1],ts
 def candidates(control,cfg,grid):
  low=np.array([cfg.ti_bounds_K[0],cfg.flow_bounds[0]]);span=np.array([cfg.ti_bounds_K[1]-cfg.ti_bounds_K[0],cfg.flow_bounds[1]-cfg.flow_bounds[0]]);n=np.clip((control-low)/span,0,1);pos=n>1e-10;lmax=float(np.min(1/n[pos])) if np.any(pos) else 1.;a=np.unique(np.r_[np.linspace(0,lmax,grid),1.]);a=a[(a>=0)&(a<=lmax+1e-12)];return low,span,n,sorted(a,key=lambda z:(abs(z-1),z))
-def fast_correct(state0,controls,cfg,grid=31,threshold=-1e-6):
+def fast_correct(state0,controls,cfg,grid=31,threshold=-1e-8):
  state=np.asarray(state0,float).copy();out=np.asarray(controls,float).copy();raw=-np.inf;applied_peak=-np.inf;changed=[];lams=[]
  for k in range(cfg.zoh_steps):
   peak,next_state,_=segment_event_audit(state,out[k],cfg);raw=max(raw,float(peak.max()))

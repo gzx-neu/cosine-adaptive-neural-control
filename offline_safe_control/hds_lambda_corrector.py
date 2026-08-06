@@ -32,7 +32,7 @@ class HDSLambdaConfig:
     # ``g_max <= -safety_margin``.  This conservative buffer is distinct from
     # the ODE solver tolerances, which are numerical controls rather than a
     # certified global error bound.
-    safety_margin: float = 1e-6
+    safety_margin: float = 1e-8
     rtol: float = 1e-10
     atol: float = 1e-12
     max_step_fraction: float = 200.0

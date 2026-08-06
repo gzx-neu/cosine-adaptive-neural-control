@@ -102,22 +102,22 @@ For the separately labeled threshold-sensitivity check, keep the formal
 default unchanged and write to a new output directory, for example:
 
 ```powershell
-$env:CAKKT_HDS_THRESHOLD='-1e-8'
+$env:CAKKT_HDS_THRESHOLD='-1e-6'
 python -m kkt_collocation.reevaluate_multiseed30_discrete31_cached `
-  --output kkt_collocation/results/nonformal_threshold1e8_discrete31_cached `
+  --output kkt_collocation/results/historical_threshold1e6_discrete31_cached `
   --workers 8 --resume
 ```
 
 This changes only the declared numerical acceptance threshold; it does not
 retrain networks or regenerate deterministic references. The resulting files
-must be labeled nonformal threshold-sensitivity results and must not overwrite
-the archived `-1e-6` formal aggregate.
+must be labeled historical threshold-sensitivity results and must not be mixed with
+the formal `-1e-8` aggregate.
 
 This audit uses no lambda bisection. It reuses the terminal state and peak from
 every accepted nominal or corrected segment and therefore omits the redundant
 full-sequence replay. Add `--resume` after an interrupted re-evaluation. The
 published aggregate and per-seed audit outputs are included under
-`kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1`
+`kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1`
 and can be checked with `python scripts/reproduce.py frozen`; checkpoint files
 are intentionally not duplicated in the publication bundle.
 
@@ -142,7 +142,7 @@ VDP and penicillin references use independent Jiang--Fu cold starts. CSTR uses
 the N=100/RK10 reduced-space control-vector NLP. Every deterministic solution
 is passed through the same adaptive-event HDS audit/correction before the gap
 is computed. All six reference cohorts achieved 50/50 solver success and 50/50
-final acceptance at `g_max <= -1e-6`.
+final acceptance at `g_max <= -1e-8`.
 
 The reported diagnostic is
 

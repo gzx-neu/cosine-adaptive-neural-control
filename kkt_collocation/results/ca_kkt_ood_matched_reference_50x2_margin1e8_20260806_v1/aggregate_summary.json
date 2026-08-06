@@ -35,7 +35,7 @@
       20260800
     ],
     "reference_gap": "100*(J_network_HDS-J_cold_start_plus_HDS)/abs(J_cold_start_plus_HDS)",
-    "reference_audit_threshold": -1e-06,
+    "reference_audit_threshold": -1e-08,
     "no_warm_start": true
   },
   "rows": [
@@ -46,20 +46,20 @@
       "qualified_references": 50,
       "selected_references": 50,
       "hds_acceptance_percent": {
-        "mean": 99.93333333333334,
-        "sample_sd": 0.3651483716701107
+        "mean": 99.73333333333333,
+        "sample_sd": 0.6914918072835209
       },
       "corrected_segments": {
-        "mean": 0.36133333333333334,
-        "sample_sd": 0.07946950546499314
+        "mean": 0.41,
+        "sample_sd": 0.11431957626426621
       },
       "gap_all_success_percent": {
-        "mean": 0.485863722803957,
-        "sample_sd": 0.11699315864043197
+        "mean": 0.3255940875261959,
+        "sample_sd": 0.08482400634492324
       },
       "gap_qualified_percent": {
-        "mean": 0.485863722803957,
-        "sample_sd": 0.11699315864043197
+        "mean": 0.3255940875261959,
+        "sample_sd": 0.08482400634492324
       }
     },
     {
@@ -69,20 +69,20 @@
       "qualified_references": 50,
       "selected_references": 50,
       "hds_acceptance_percent": {
-        "mean": 97.8,
-        "sample_sd": 3.078288821563942
+        "mean": 89.46666666666667,
+        "sample_sd": 5.144353002671178
       },
       "corrected_segments": {
-        "mean": 0.544,
-        "sample_sd": 0.05493569908977912
+        "mean": 0.844,
+        "sample_sd": 0.08919563929344033
       },
       "gap_all_success_percent": {
-        "mean": 1.8133330972273405,
-        "sample_sd": 0.2173224084214513
+        "mean": 1.8153517573531512,
+        "sample_sd": 0.26123464947871233
       },
       "gap_qualified_percent": {
-        "mean": 1.8133330972273405,
-        "sample_sd": 0.2173224084214513
+        "mean": 1.8153517573531512,
+        "sample_sd": 0.26123464947871233
       }
     },
     {
@@ -100,12 +100,12 @@
         "sample_sd": 0.06339440491646445
       },
       "gap_all_success_percent": {
-        "mean": 1.88261994919482,
-        "sample_sd": 0.22607252326436478
+        "mean": 1.3352984019717098,
+        "sample_sd": 0.22913143514834128
       },
       "gap_qualified_percent": {
-        "mean": 1.88261994919482,
-        "sample_sd": 0.22607252326436478
+        "mean": 1.3352984019717098,
+        "sample_sd": 0.22913143514834128
       }
     },
     {
@@ -123,12 +123,12 @@
         "sample_sd": 0.02285385854893465
       },
       "gap_all_success_percent": {
-        "mean": 4.672086004850267,
-        "sample_sd": 0.668720918566877
+        "mean": 4.230290550312939,
+        "sample_sd": 0.672967524530311
       },
       "gap_qualified_percent": {
-        "mean": 4.672086004850267,
-        "sample_sd": 0.668720918566877
+        "mean": 4.230290550312939,
+        "sample_sd": 0.672967524530311
       }
     },
     {
@@ -142,16 +142,16 @@
         "sample_sd": 0.0
       },
       "corrected_segments": {
-        "mean": 18.197999999999997,
-        "sample_sd": 2.2892513457761536
+        "mean": 28.80866666666667,
+        "sample_sd": 2.688297414443898
       },
       "gap_all_success_percent": {
-        "mean": 0.2912010463825725,
-        "sample_sd": 0.0767013748580901
+        "mean": 0.29447685865243745,
+        "sample_sd": 0.0772835323446855
       },
       "gap_qualified_percent": {
-        "mean": 0.2912010463825725,
-        "sample_sd": 0.0767013748580901
+        "mean": 0.29447685865243745,
+        "sample_sd": 0.0772835323446855
       }
     },
     {
@@ -165,16 +165,16 @@
         "sample_sd": 0.0
       },
       "corrected_segments": {
-        "mean": 24.252666666666666,
-        "sample_sd": 3.210837180907629
+        "mean": 30.659333333333336,
+        "sample_sd": 3.3478618326589755
       },
       "gap_all_success_percent": {
-        "mean": 0.5555928052569461,
-        "sample_sd": 0.12121808118733919
+        "mean": 0.5596562452219253,
+        "sample_sd": 0.12079124554863967
       },
       "gap_qualified_percent": {
-        "mean": 0.5555928052569461,
-        "sample_sd": 0.12121808118733919
+        "mean": 0.5596562452219253,
+        "sample_sd": 0.12079124554863967
       }
     }
   ]

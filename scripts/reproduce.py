@@ -60,9 +60,9 @@ def check_environment() -> None:
         "kkt_collocation/results/economou_cstr_reduced_kkt_n100_test400_lhs_margin0/records.jsonl",
         "kkt_collocation/results/economou_cstr_reduced_kkt_n100_test400_lhs_margin0/summary.json",
         "kkt_collocation/results/economou_cstr_n100_test400_hds_s200_sk10_fair/cold_reference_high_fidelity.csv",
-        "kkt_collocation/results/ca_kkt_ood_stress_30seeds_20260803_v1/aggregate_summary.json",
-        "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/aggregate_summary.json",
-        "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/cohorts/selected_50x2_points.csv",
+        "kkt_collocation/results/ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1/aggregate_summary.json",
+        "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1/aggregate_summary.json",
+        "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1/cohorts/selected_50x2_points.csv",
     )
     missing = [name for name in required if not (ROOT / name).is_file()]
     if missing:
@@ -130,7 +130,7 @@ def aggregate(seeds: list[int]) -> None:
         if tuple(seeds) == DEFAULT_SEEDS:
             env = os.environ.copy()
             env["CAKKT_CSTR_SOURCE_ROOT"] = str(source.resolve())
-            env["CAKKT_CSTR_MARGIN_OUT"] = str((RUN_ROOT / "cstr_margin1e6").resolve())
+            env["CAKKT_CSTR_MARGIN_OUT"] = str((RUN_ROOT / "cstr_margin1e8").resolve())
             run([
                 str(PYTHON), "kkt_collocation/reevaluate_cstr_margin1e6_30seeds.py",
                 "--workers", "6", "--force",
@@ -176,7 +176,7 @@ def reevaluate_cached_hds(workers: int, resume: bool, checkpoint_root: Path | No
     command = [
         str(PYTHON),
         "-m", "kkt_collocation.reevaluate_multiseed30_discrete31_cached",
-        "--output", str(RUN_ROOT / "formal_multiseed30_discrete31_cached_margin1e6"),
+        "--output", str(RUN_ROOT / "formal_multiseed30_discrete31_cached_margin1e8"),
         "--workers", str(workers),
     ]
     if checkpoint_root is not None:

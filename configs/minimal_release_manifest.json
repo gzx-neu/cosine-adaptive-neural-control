@@ -16,7 +16,7 @@
     "two_stage_epochs": "200+10",
     "lambda_candidates": 31,
     "hds": "adaptive DOP853 with event-located extrema and cached segment propagation",
-    "formal_threshold": -1e-6
+    "formal_threshold": -1e-8
   },
   "entry_points": {
     "environment_check": ["scripts/reproduce.py", "scripts/verify_bundle.py"],

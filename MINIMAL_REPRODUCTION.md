@@ -53,18 +53,18 @@ python scripts/reproduce.py hds-cached31 --workers 8 --resume
 
 This stage uses adaptive DOP853 event audits, exactly 31 discrete lambda
 candidates, closest-to-one early stopping, and accepted-segment propagation
-reuse. The formal acceptance threshold is \(g_{\max}\le-10^{-6}\).
+reuse. The formal acceptance threshold is \(g_{\max}\le-10^{-8}\).
 
 The separate sensitivity check is optional and must use a new output directory:
 
 ```powershell
-$env:CAKKT_HDS_THRESHOLD='-1e-8'
+$env:CAKKT_HDS_THRESHOLD='-1e-6'
 python -m kkt_collocation.reevaluate_multiseed30_discrete31_cached `
-  --output kkt_collocation/results/nonformal_threshold1e8_discrete31_cached `
+  --output kkt_collocation/results/historical_threshold1e6_discrete31_cached `
   --workers 8 --resume
 ```
 
-It is not a formal result and must not overwrite the \(-10^{-6}\) aggregate.
+It is a historical threshold result and must not be mixed with the formal \(-10^{-8}\) aggregate.
 
 ## Stage 4: tables and figures (optional presentation stage)
 

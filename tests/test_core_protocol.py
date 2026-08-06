@@ -25,7 +25,7 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(protocol["seeds"]["count"], 30)
         self.assertEqual(protocol["training"]["lambda_base_grid_points"], 31)
         self.assertTrue(protocol["audit"]["nominal_lambda_audited_separately"])
-        self.assertEqual(protocol["audit"]["acceptance_threshold"], -1e-6)
+        self.assertEqual(protocol["audit"]["acceptance_threshold"], -1e-8)
         self.assertEqual(protocol["audit"]["solver"], "DOP853")
 
     def test_cosine_adaptive_projection(self) -> None:
@@ -61,7 +61,7 @@ class ProtocolTests(unittest.TestCase):
         def derivative(_state: np.ndarray, control: float) -> float:
             return float(control)
 
-        config = AdaptiveEventHDSConfig(grid_size=31, safety_margin=1e-6)
+        config = AdaptiveEventHDSConfig(grid_size=31, safety_margin=1e-8)
         corrector = AdaptiveEventHDSCorrector(ode, constraint, derivative, (0.0, 0.2), config)
         candidates = corrector._candidate_lambdas(0.17, exclude_nominal=True)
         self.assertLessEqual(len(candidates), 31)
@@ -70,7 +70,7 @@ class ProtocolTests(unittest.TestCase):
         result = corrector.correct(np.asarray([-0.1]), np.asarray([0.2]), 1.0)
         self.assertTrue(result.accepted)
         self.assertFalse(result.requires_reoptimization)
-        self.assertLessEqual(corrector.audit(np.asarray([-0.1]), result.controls, 1.0), -1e-6)
+        self.assertLessEqual(corrector.audit(np.asarray([-0.1]), result.controls, 1.0), -1e-8)
 
     def test_cstr_modules_import_as_package(self) -> None:
         import kkt_collocation.economou_cstr_hds_fast  # noqa: F401

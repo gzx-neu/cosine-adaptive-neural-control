@@ -63,7 +63,7 @@ from kkt_collocation.train_vdp_kkt_policy import (  # noqa: E402
 
 
 RESULTS = ROOT / "kkt_collocation" / "results"
-DEFAULT_OUTPUT = RESULTS / "ca_kkt_ood_stress_30seeds_20260803_v1"
+DEFAULT_OUTPUT = RESULTS / "ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1"
 DEFAULT_SEEDS = tuple(range(20260771, 20260801))
 THRESHOLD = -1.0e-6
 GRID_SIZE = 31
@@ -602,7 +602,7 @@ def _write_table(path: Path, aggregate: dict) -> None:
             )
     lines += [
         "",
-        "Notes: ΔJ = J_HDS - J_nominal is the absolute objective change for the same OOD initial condition; it is not normalized and is not a gap to a deterministic reference. Positive ΔJ denotes objective degradation under the unified minimization convention (Penicillin uses J = -final x3). Objective units differ across benchmarks, so ΔJ magnitudes must not be compared between benchmarks. Nominal violation uses g > 0; HDS acceptance requires final g_max ≤ -1e-6. The omitted fallback rate is 100% minus the HDS acceptance rate. All OOD points would be dispatched to the deterministic solver by the domain guard in default deployment. The bypassed neural/HDS results are diagnostic numerical evidence, not an OOD safety or optimality guarantee.",
+            "Notes: ΔJ = J_HDS - J_nominal is the absolute objective change for the same OOD initial condition; it is not normalized and is not a gap to a deterministic reference. Positive ΔJ denotes objective degradation under the unified minimization convention (Penicillin uses J = -final x3). Objective units differ across benchmarks, so ΔJ magnitudes must not be compared between benchmarks. Nominal violation uses g > 0; HDS acceptance requires final g_max ≤ -1e-8. The omitted fallback rate is 100% minus the HDS acceptance rate. All OOD points would be dispatched to the deterministic solver by the domain guard in default deployment. The bypassed neural/HDS results are diagnostic numerical evidence, not an OOD safety or optimality guarantee.",
     ]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

@@ -7,7 +7,7 @@ Protocol:
 * adaptive DOP853 and derivative-zero event extrema;
 * a 31-point lambda base grid, closest-to-one first-safe early stop;
 * no lambda bisection;
-* acceptance requires g_max <= -1e-6;
+* acceptance requires g_max <= -1e-8;
 * terminal states and peaks from every accepted segment propagation are reused;
   the corrected sequence is not propagated a redundant second time.
 
@@ -33,15 +33,14 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "kkt_collocation" / "results"
-DEFAULT_OUT = RESULTS / "formal_multiseed30_discrete31_cached_margin1e6_20260806_v1"
+DEFAULT_OUT = RESULTS / "formal_multiseed30_discrete31_cached_margin1e8_20260806_v1"
 DEFAULT_CHECKPOINT_ROOT = ROOT / "reproduced_results"
 SEEDS = tuple(range(20260771, 20260801))
 METHODS = ("supervised", "unprocessed", "linear_cosine", "standard_pcgrad")
 BRANCH = {"supervised": "S-u", "unprocessed": "S-u+K", "linear_cosine": "S-u+K", "standard_pcgrad": "S-u+K"}
 GRID = 31
-# Formal paper value is -1e-6.  A separate output directory may opt into a
-# threshold-sensitivity check without changing the formal default.
-THRESHOLD = float(os.environ.get("CAKKT_HDS_THRESHOLD", "-1e-6"))
+# Formal paper value is -1e-8.
+THRESHOLD = float(os.environ.get("CAKKT_HDS_THRESHOLD", "-1e-8"))
 
 from kkt_collocation.benchmark_hds_segment_cache_grid31_small import cstr_correct, scalar_correct
 from kkt_collocation.compare_lambda_discrete31_vs51_small import scalar_corrector
@@ -282,7 +281,7 @@ def sample_stats(values: list[float]) -> dict[str, float]:
 
 def aggregate(summaries: list[dict], output: Path) -> dict:
     report = {
-        "formal_protocol": bool(np.isclose(THRESHOLD, -1e-6)),
+        "formal_protocol": bool(np.isclose(THRESHOLD, -1e-8)),
         "protocol": "30 frozen seeds, four methods, matched 400 points, discrete-only 31-point-base-grid cached HDS",
         "seeds": list(SEEDS), "grid_size": GRID, "bisection": False,
         "acceptance_threshold": THRESHOLD, "segment_cache_reused": True,

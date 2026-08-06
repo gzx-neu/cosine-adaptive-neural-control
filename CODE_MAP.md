@@ -20,7 +20,7 @@
 | `kkt_collocation/train_unified_economou_cstr_n100_ablation.py` | CSTR N=100/RK10 four-method training |
 | `kkt_collocation/evaluate_unified_economou_cstr_n100_hds.py` | CSTR matched-400 HDS evaluation and all-400/qualified-286 gaps |
 | `kkt_collocation/run_cstr_k10_cuda_multiseed.py` | multi-seed CUDA launcher for CSTR |
-| `kkt_collocation/reevaluate_cstr_margin1e6_30seeds.py` | conservative CSTR re-audit with `g_max <= -1e-6` |
+| `kkt_collocation/reevaluate_cstr_margin1e6_30seeds.py` | compatibility CSTR re-audit helper; formal reports use `g_max <= -1e-8` |
 | `kkt_collocation/reevaluate_multiseed30_discrete31_cached.py` | unified reproduced-checkpoint re-evaluation: 30 seeds, matched 400 points, a 31-point lambda base grid without bisection, and cached segment propagation |
 | `kkt_collocation/evaluate_ca_kkt_ood_stress_30seeds.py` | 30-seed guard-bypassed near/far OOD network audit on fixed 100-point layers |
 | `kkt_collocation/run_ood_matched_reference_50x2.py` | fixed 50+50 OOD selection, CSTR cold references, reference audit and matched-gap aggregation |

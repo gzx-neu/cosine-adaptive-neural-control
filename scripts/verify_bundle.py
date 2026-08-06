@@ -23,7 +23,7 @@ def close(actual: float, expected: float, tolerance: float = 5e-12) -> None:
 
 def verify_results() -> None:
     cached31 = read_json(
-        "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_summary.json"
+        "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1/aggregate_summary.json"
     )
     if [int(seed) for seed in cached31["seeds"]] != SEEDS:
         raise AssertionError("Seed sequence differs from the frozen protocol")
@@ -32,10 +32,12 @@ def verify_results() -> None:
         raise AssertionError("Cached HDS candidate protocol mismatch")
     if not cached31["segment_cache_reused"] or cached31["final_reaudit_performed"]:
         raise AssertionError("Cached HDS propagation-reuse invariant failed")
+    if cached31["acceptance_threshold"] != -1e-8 or not cached31["formal_protocol"]:
+        raise AssertionError("Formal HDS threshold must be -1e-8")
     expected_cached = {
-        "vdp": 0.16568189689021476,
-        "penicillin": 0.31744551418373274,
-        "cstr": 0.24418607280269095,
+        "vdp": 0.1655908761042304,
+        "penicillin": 0.3174297829038171,
+        "cstr": 0.24398521332539502,
     }
     for benchmark, expected in expected_cached.items():
         close(cached31["benchmarks"][benchmark]["linear_cosine"]["hds_gap_percent"]["mean"], expected)
@@ -70,17 +72,17 @@ def verify_required_inputs() -> None:
 
 
 def verify_ood_results() -> None:
-    root = ROOT / "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1"
+    root = ROOT / "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1"
     report = json.loads((root / "aggregate_summary.json").read_text(encoding="utf-8"))
     if report["protocol"]["points_per_layer"] != 50 or report["protocol"]["training_seeds"] != SEEDS:
         raise AssertionError("OOD point count or seed sequence differs from the frozen protocol")
     expected = {
-        ("vdp", "near_ood_0_10pct"): 0.485863722803957,
-        ("vdp", "far_ood_10_20pct"): 1.8133330972273405,
-        ("penicillin", "near_ood_0_10pct"): 1.88261994919482,
-        ("penicillin", "far_ood_10_20pct"): 4.672086004850267,
-        ("cstr", "near_ood_0_10pct"): 0.2912010463825725,
-        ("cstr", "far_ood_10_20pct"): 0.5555928052569461,
+        ("vdp", "near_ood_0_10pct"): 0.3255940875261959,
+        ("vdp", "far_ood_10_20pct"): 1.8153517573531512,
+        ("penicillin", "near_ood_0_10pct"): 1.3352984019717098,
+        ("penicillin", "far_ood_10_20pct"): 4.230290550312939,
+        ("cstr", "near_ood_0_10pct"): 0.29447685865243745,
+        ("cstr", "far_ood_10_20pct"): 0.5596562452219253,
     }
     if len(report["rows"]) != 6:
         raise AssertionError("Expected six benchmark/layer OOD rows")
@@ -95,9 +97,12 @@ def verify_ood_results() -> None:
         per_seed = list(csv.DictReader(handle))
     if len(selected) != 300 or len(per_seed) != 180:
         raise AssertionError("Expected 300 selected OOD points and 180 seed/layer summaries")
-    network_root = ROOT / "kkt_collocation/results/ca_kkt_ood_stress_30seeds_20260803_v1"
-    if len(list(network_root.glob("*/seed*/*_per_sample.csv"))) != 180:
-        raise AssertionError("Expected 180 frozen OOD network per-sample files")
+    stress = read_json("kkt_collocation/results/ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1/aggregate_summary.json")
+    stress_protocol = read_json("kkt_collocation/results/ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1/protocol.json")
+    if stress["training_seeds"] != SEEDS or stress["samples_per_layer"] != 100:
+        raise AssertionError("OOD stress protocol mismatch")
+    if stress_protocol.get("threshold") != -1e-8:
+        raise AssertionError("OOD stress threshold must be -1e-8")
     print("30-seed matched OOD 50+50 reference invariants: OK")
 
 

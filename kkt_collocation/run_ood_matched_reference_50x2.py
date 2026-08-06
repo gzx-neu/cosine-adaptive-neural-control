@@ -40,10 +40,10 @@ from kkt_collocation.screen_economou_cstr_30x30 import EconomouScreenConfig
 
 
 RESULTS = ROOT / "kkt_collocation" / "results"
-OOD = RESULTS / "ca_kkt_ood_stress_30seeds_20260803_v1"
-OUT = RESULTS / "ca_kkt_ood_matched_reference_50x2_20260804_v1"
+OOD = RESULTS / "ca_kkt_ood_stress_30seeds_margin1e8_20260806_v1"
+OUT = RESULTS / "ca_kkt_ood_matched_reference_50x2_margin1e8_20260806_v1"
 SELECTION_SEED = 20260804
-THRESHOLD = -1e-6
+THRESHOLD = -1e-8
 LAYERS = ("near_ood_0_10pct", "far_ood_10_20pct")
 PROBLEMS = ("vdp", "penicillin", "cstr")
 SEEDS = tuple(range(20260771, 20260801))
@@ -327,7 +327,7 @@ def stage_compile() -> None:
                      f"{row['hds_acceptance_percent']['mean']:.4f} ± {row['hds_acceptance_percent']['sample_sd']:.4f} | "
                      f"{row['corrected_segments']['mean']:.4f} ± {row['corrected_segments']['sample_sd']:.4f} | "
                      f"{gap['mean']:.4f} ± {gap['sample_sd']:.4f} |")
-    lines += ["", "Notes: all six reference cohorts achieved 50/50 deterministic-solver success and 50/50 acceptance after the same adaptive-event HDS audit/correction, with final g_max <= -1e-6. No neural/policy/label warm start is used. The reported gap compares network+HDS with matched cold-start+HDS at the same OOD initial condition. The table is a guard-bypassed OOD diagnostic, not an OOD safety or global-optimality claim."]
+    lines += ["", "Notes: all six reference cohorts achieved 50/50 deterministic-solver success and 50/50 acceptance after the same adaptive-event HDS audit/correction, with final g_max <= -1e-8. No neural/policy/label warm start is used. The reported gap compares network+HDS with matched cold-start+HDS at the same OOD initial condition. The table is a guard-bypassed OOD diagnostic, not an OOD safety or global-optimality claim."]
     (OUT / "aggregate_table.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print((OUT / "aggregate_table.md").read_text(encoding="utf-8"))
 

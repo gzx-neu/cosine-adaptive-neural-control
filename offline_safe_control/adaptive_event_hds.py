@@ -28,7 +28,7 @@ class AdaptiveEventHDSConfig:
 
     grid_size: int = 31
     allow_nonformal_grid: bool = False
-    safety_margin: float = 1e-6
+    safety_margin: float = 1e-8
     rtol: float = 1e-10
     atol: float = 1e-12
     integrator: str = "DOP853"

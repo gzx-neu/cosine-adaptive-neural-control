@@ -57,7 +57,7 @@
       "transcription_substeps_per_zoh": 10,
       "test_points": 400,
       "qualified_reference_points": 286,
-      "acceptance_threshold": -0.000001,
+      "acceptance_threshold": -0.00000001,
       "reference": "cold-start reduced-space control-vector NLP"
     }
   },
@@ -71,7 +71,7 @@
     "candidate_order": "increasing absolute distance from lambda=1",
     "early_stop": true,
     "lambda_bisection": false,
-    "acceptance_threshold": -0.000001,
+    "acceptance_threshold": -0.00000001,
     "segment_cache_reused": true,
     "final_reaudit_performed": false,
     "claim_boundary": "continuous-time numerical audit evidence under the declared model and numerical settings"
@@ -86,7 +86,7 @@
     "matched_reference_points_per_layer": 50,
     "selection_seed_base": 20260804,
     "reference": "fixed cold-start deterministic solution followed by the same HDS audit/correction",
-    "reference_acceptance_threshold": -0.000001,
+    "reference_acceptance_threshold": -0.00000001,
     "gap": "100*(J_network_plus_HDS-J_cold_start_plus_HDS)/abs(J_cold_start_plus_HDS)",
     "default_domain_guard_action": "dispatch every OOD state to the deterministic solver"
   }

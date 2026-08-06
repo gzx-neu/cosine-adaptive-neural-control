@@ -46,7 +46,7 @@ the implementation accumulates the cached segment maxima and does not replay
 the complete corrected sequence a second time.
 
 All three benchmark populations use the conservative numerical acceptance rule
-`g_max <= -1e-6`. For CSTR, both all-400 results and the 286-point subset whose cold-start
+`g_max <= -1e-8`. For CSTR, both all-400 results and the 286-point subset whose cold-start
 reference passed the independent continuous audit are reported. The all-400
 test is not reduced or filtered.
 
@@ -75,7 +75,7 @@ N=100/RK10 reduced-space control-only NLP with its fixed declared starts. No
 network, label, or neighbouring solution initializes a reference solve.
 
 The deterministic controls receive the same adaptive-event HDS
-audit/correction and must satisfy `g_max <= -1e-6`. The reported accepted-policy
+audit/correction and must satisfy `g_max <= -1e-8`. The reported accepted-policy
 gap is
 
 ```text
@@ -108,7 +108,7 @@ training command has created checkpoints under `reproduced_results`. It reads
 the included matched deterministic references directly and does not depend on
 machine-specific historical result directories. The precise archived values
 are stored under
-`kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1`
+`kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e8_20260806_v1`
 and are checked by `scripts/verify_bundle.py`; checkpoints are regenerated,
 not duplicated in the publication bundle.
 
