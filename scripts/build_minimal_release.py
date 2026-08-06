@@ -37,6 +37,9 @@ INPUT_FILES = (
     "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_summary.json",
     "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/aggregate_table.md",
     "kkt_collocation/results/formal_multiseed30_discrete31_cached_margin1e6_20260806_v1/per_seed_summary.csv",
+    "kkt_collocation/results/ca_kkt_ood_stress_30seeds_20260803_v1/aggregate_summary.json",
+    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/aggregate_summary.json",
+    "kkt_collocation/results/ca_kkt_ood_matched_reference_50x2_20260804_v1/cohorts/selected_50x2_points.csv",
 )
 
 

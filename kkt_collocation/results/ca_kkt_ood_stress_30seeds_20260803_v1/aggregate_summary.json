@@ -1,0 +1,527 @@
+{
+  "formal_protocol": false,
+  "diagnostic_only": true,
+  "diagnostic_label": "guard-bypassed OOD stress diagnostic",
+  "method": "CA-KKT (linear cosine conflict-aware KKT continuation)",
+  "training_seeds": [
+    20260771,
+    20260772,
+    20260773,
+    20260774,
+    20260775,
+    20260776,
+    20260777,
+    20260778,
+    20260779,
+    20260780,
+    20260781,
+    20260782,
+    20260783,
+    20260784,
+    20260785,
+    20260786,
+    20260787,
+    20260788,
+    20260789,
+    20260790,
+    20260791,
+    20260792,
+    20260793,
+    20260794,
+    20260795,
+    20260796,
+    20260797,
+    20260798,
+    20260799,
+    20260800
+  ],
+  "seed_count": 30,
+  "samples_per_layer": 100,
+  "ood_layers": {
+    "near_ood_0_10pct": "outside the training box, within the 10% expanded box",
+    "far_ood_10_20pct": "outside the 10% expanded box, within the 20% expanded box"
+  },
+  "initial_feasibility_filter": "retain only points satisfying the physical path constraints at t=0",
+  "hds": {
+    "integrator": "DOP853 adaptive step",
+    "peak_location": "constraint-derivative stationary events plus segment endpoints",
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "lambda_candidates": 31,
+    "candidate_order": "ascending absolute distance from lambda=1 with first-safe early stop",
+    "acceptance_threshold": -1e-06,
+    "claim_limit": "continuous-time numerical audit evidence under the declared model and numerical settings"
+  },
+  "objective_comparison": "HDS objective change relative to the same nominal extrapolated neural control; no OOD deterministic reference was solved and no OOD optimality gap is reported",
+  "deployment_rule": "all OOD points are dispatched by the domain guard to the deterministic solver; the neural-policy results intentionally bypass that guard for diagnosis only",
+  "problems": {
+    "vdp": {
+      "near_ood_0_10pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 33.43333333333333,
+          "sample_sd": 6.936576385654741,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 33.43333333333333,
+          "sample_sd": 6.936576385654741,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 0.006547844512365621,
+          "sample_sd": 0.0016077872647090345,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 99.96666666666667,
+          "sample_sd": 0.18257418583505536,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 0.03333333333333333,
+          "sample_sd": 0.18257418583505533,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -4.2512468893403836e-05,
+          "sample_sd": 3.475838151435333e-05,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 33.4,
+          "sample_sd": 6.936162110820812,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 3.6066666666666665,
+          "sample_sd": 0.7215564275653843,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 0.36066666666666675,
+          "sample_sd": 0.07215564275653841,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.007944337766872074,
+          "sample_sd": 0.002336872795047446,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 0.2493432940648838,
+          "sample_sd": 0.07448405986828917,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 3.3754666656022885e-06,
+          "sample_sd": 1.3027619663320388e-06,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.019738592100009552,
+          "sample_sd": 0.0010548736455688803,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.01974196756667516,
+          "sample_sd": 0.0010549582987980153,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      },
+      "far_ood_10_20pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 55.733333333333334,
+          "sample_sd": 2.887945616707051,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 55.733333333333334,
+          "sample_sd": 2.887945616707051,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 0.03605797029944154,
+          "sample_sd": 0.03956908382827988,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 98.03333333333333,
+          "sample_sd": 1.9561280074701646,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 1.9666666666666666,
+          "sample_sd": 1.9561280074701641,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -9.75965720238281e-05,
+          "sample_sd": 9.570563136010278e-05,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 53.766666666666666,
+          "sample_sd": 3.5397577681913863,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 5.956666666666667,
+          "sample_sd": 0.5028767815988966,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 0.5956666666666666,
+          "sample_sd": 0.050287678159889666,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.02281843086843299,
+          "sample_sd": 0.0029192000703386024,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 0.695947980734777,
+          "sample_sd": 0.0852595268447051,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 3.9128666685428465e-06,
+          "sample_sd": 2.0187190591612078e-06,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.020242502566611316,
+          "sample_sd": 0.0015661650198958606,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.02024641543327986,
+          "sample_sd": 0.0015668684891445052,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    "penicillin": {
+      "near_ood_0_10pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 0.2836232786640567,
+          "sample_sd": 0.06558006836638285,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -0.00024168456639394228,
+          "sample_sd": 0.00020307410307945114,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 29.549999999999997,
+          "sample_sd": 0.6404470421456433,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 2.955,
+          "sample_sd": 0.06404470421456435,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.007277955549990704,
+          "sample_sd": 0.0006681877793408591,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 0.9519960622397413,
+          "sample_sd": 0.08797186379410989,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 2.1176666632527482e-06,
+          "sample_sd": 8.707769211817138e-07,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.19725733659995362,
+          "sample_sd": 0.004996309652687169,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.1972594542666169,
+          "sample_sd": 0.00499632816747506,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      },
+      "far_ood_10_20pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 0.8039946487041694,
+          "sample_sd": 0.18089596761049556,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -0.0004897511382663052,
+          "sample_sd": 0.0006033568285815317,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 30.043333333333333,
+          "sample_sd": 0.18879533405494833,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 3.0043333333333333,
+          "sample_sd": 0.01887953340549484,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.009377284702433757,
+          "sample_sd": 0.000732257326160219,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 1.256701127924625,
+          "sample_sd": 0.1007119676871118,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 2.3368999997425516e-06,
+          "sample_sd": 1.2539524637782742e-06,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.21769634543337452,
+          "sample_sd": 0.008608268402560572,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.21769868233337425,
+          "sample_sd": 0.008608051003650015,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    "cstr": {
+      "near_ood_0_10pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 99.96666666666667,
+          "sample_sd": 0.18257418583505536,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 99.96666666666667,
+          "sample_sd": 0.18257418583505536,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 1.185329223455123,
+          "sample_sd": 0.2552751664631667,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -1.1399646741313181e-06,
+          "sample_sd": 1.2217064712136532e-07,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 99.96666666666667,
+          "sample_sd": 0.18257418583505536,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 18.068333333333335,
+          "sample_sd": 2.3486798688703363,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 18.068333333333335,
+          "sample_sd": 2.3486798688703363,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.0068427360805827205,
+          "sample_sd": 0.0012305149107399375,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 0.4461234377931094,
+          "sample_sd": 0.07974009932094538,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 4.824933336446217e-06,
+          "sample_sd": 1.2278537779262342e-06,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.29915534163329,
+          "sample_sd": 0.008743878626842947,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.2991601665666264,
+          "sample_sd": 0.00874388113881805,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      },
+      "far_ood_10_20pct": {
+        "nominal_violation_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_strict_rejection_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "nominal_max_g": {
+          "mean": 1.917303765415903,
+          "sample_sd": 0.34878829127615923,
+          "n": 30
+        },
+        "hds_acceptance_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "fallback_rate_percent": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "final_max_g_on_accepted": {
+          "mean": -1.239890421955714e-06,
+          "sample_sd": 2.123746619805606e-07,
+          "n": 30
+        },
+        "corrected_trajectory_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        },
+        "corrected_control_segment_rate_percent": {
+          "mean": 24.381333333333334,
+          "sample_sd": 2.994080059433757,
+          "n": 30
+        },
+        "mean_corrected_segments": {
+          "mean": 24.381333333333334,
+          "sample_sd": 2.9940800594337578,
+          "n": 30
+        },
+        "mean_hds_objective_change_J_on_accepted": {
+          "mean": 0.010974646265457423,
+          "sample_sd": 0.0017902401231451185,
+          "n": 30
+        },
+        "mean_hds_objective_change_percent_on_accepted": {
+          "mean": 0.7126250951123367,
+          "sample_sd": 0.11559819639339829,
+          "n": 30
+        },
+        "mean_inference_seconds": {
+          "mean": 6.487033337180035e-06,
+          "sample_sd": 2.592076354013913e-06,
+          "n": 30
+        },
+        "mean_hds_audit_correction_seconds": {
+          "mean": 0.3225676233000922,
+          "sample_sd": 0.011361501332570174,
+          "n": 30
+        },
+        "mean_total_guard_bypassed_seconds": {
+          "mean": 0.3225741103334295,
+          "sample_sd": 0.011360856162548314,
+          "n": 30
+        },
+        "default_deployment_deterministic_dispatch_rate_percent": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "n": 30
+        }
+      }
+    }
+  }
+}
